@@ -9,6 +9,9 @@ class Home extends CI_Controller {
         $this->load->model('Absensi_model');
         $this->load->helper(array('url', 'form'));
         $this->load->library('session');
+		if (!$this->session->userdata('user_id')) {
+			redirect('auth/login');
+	}
     }
 
     public function index() {
