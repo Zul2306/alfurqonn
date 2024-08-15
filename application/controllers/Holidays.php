@@ -10,7 +10,10 @@ class Holidays extends CI_Controller
 		$this->load->model('Holidays_model');
 		$this->load->library('session');
 		$this->load->library('form_validation');
+		if (!$this->session->userdata('user_id')) {
+			redirect('auth/login');
 	}
+}
 
 	public function create()
 	{

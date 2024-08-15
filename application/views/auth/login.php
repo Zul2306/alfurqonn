@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         body {
@@ -20,6 +22,11 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
+        }
+        .login-container img {
+            width: 100px; /* Adjust the size of the logo */
+            height: auto;
+            margin-bottom: 20px;
         }
         .login-container h1 {
             margin-bottom: 20px;
@@ -49,11 +56,21 @@
             font-size: 16px;
         }
         .login-container button:hover {
-            background-color: #45a049;
+            background-color: blue;
         }
         .error-message {
             color: red;
             margin-top: 10px;
+        }
+        .register-link {
+            margin-top: 15px;
+        }
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -73,6 +90,10 @@
         <?php if ($this->session->flashdata('error')): ?>
             <p class="error-message"><?php echo $this->session->flashdata('error'); ?></p>
         <?php endif; ?>
+
+        <div class="register-link">
+            <p>Belum punya akun? <a href="<?php echo site_url('auth/register'); ?>">Daftar di sini</a></p>
+        </div>
     </div>
 </body>
 </html>
