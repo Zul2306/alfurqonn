@@ -85,7 +85,7 @@ class Auth extends CI_Controller
 			redirect('home');
 		} else {
 			$this->session->set_flashdata('error', 'Invalid email or password');
-			redirect('auth/login');
+			redirect('dashboard/home');
 		}
 	}
 
