@@ -58,6 +58,34 @@ class Holidays extends CI_Controller
 		return TRUE;
 	}
 
+	public function edit($id)
+    {
+        $data['holidays'] = $this->Holidays_model->get_holidays_by_id($id);
+        if (!$data['holidays']) {
+            show_404(); // Tampilkan halaman 404 jika user tidak ditemukan
+        }
+
+        if (empty($data['holidays'])) {
+            show_404();
+        }
+        // Tambahkan log untuk debugging
+        log_message('debug', 'Holidays data: ' . print_r($data['holidays'], true));
+        $this->load->view('holidays/holidays_edit', $data);
+    }
+
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $data = [
+            'tanggal' => $this->input->post('tanggal'),
+            'keterangan' => $this->input->post('keterangan')
+        ];
+    
+        $success = $this->Holidays_model->update_holidays($id, $data);
+       
+            redirect('holidays/index');
+    }
+
 	public function delete($id)
 	{
 		if ($this->Holidays_model->delete_holidays($id)) {
