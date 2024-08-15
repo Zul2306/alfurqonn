@@ -7,6 +7,9 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model');
         $this->load->library('session');
+		if (!$this->session->userdata('user_id')) {
+			redirect('auth/login');
+	}
     }
 
     public function index() {
