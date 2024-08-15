@@ -101,9 +101,7 @@
 			margin-top: 20px;
 		}
 
-		.logout-button {
-			margin-top: 20px;
-		}
+		
 
 		table.dataTable {
 			width: 100%;
@@ -210,6 +208,11 @@
             font-weight: bold; /* Emphasize the active link */
             color: #f8f9fa !important; /* Lighter color for active link */
         }
+        .container {
+			margin-top: 80px;
+			/* Adjust the margin-top to provide space for the fixed navbar */
+
+		}
         .navbar-nav .nav-item.logout {
 			margin-left: auto;
 			/* Push the logout button to the right */
@@ -231,14 +234,39 @@
 </head>
 
 <body>
-	<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="<?php echo site_url('home'); ?>">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('user/list'); ?>">User List <span class="visually-hidden"></a>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('holidays/index'); ?>">Holidays </span></a>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item logout">
+          <a class="btn btn-danger" href="<?php echo site_url('auth/logout'); ?>">Logout <span class="visually-hidden"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+	<div class="container content">
 		<div class="row justify-content-md-end">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">Rekap Presensi</div>
 
-					<div class="card-body">
-						<a href="<?= site_url('auth/logout'); ?>" class="btn btn-danger logout-button">Logout</a>
 
     						<form method="GET" action="<?= site_url('home') ?>" class="mb-3">
     							<div class="form-row">
