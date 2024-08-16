@@ -22,6 +22,7 @@
         <input type="text" name="keterangan" id="keterangan" class="form-control" value="<?php echo $holidays->keterangan; ?>">
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
+	<a href="<?php echo base_url('holidays/index'); ?>" class="btn btn-secondary">Kembali ke Daftar</a>
 </form>
 
     </div>
