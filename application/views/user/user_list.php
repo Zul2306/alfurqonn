@@ -112,7 +112,7 @@
     </nav>
 
 
-  <div class="container mt-5">
+  <div class="container content">
     <h1 class="mb-4">Daftar User</h1>
     <table class="table table-bordered">
       <thead>

@@ -68,6 +68,8 @@ private function format_data($absensiData) {
         ];
     }
 
+    
+
     return $formatted;
 }
 

@@ -283,7 +283,6 @@
                 <div class="card">
                     <div class="card-header">Rekap Presensi</div>
 
-
                     <form method="GET" action="<?= site_url('home') ?>" class="mb-3">
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -315,16 +314,22 @@
                                     <tr>
                                         <th rowspan="2">Nama</th>
                                         <?php for ($i = 1; $i <= $endOfMonth; $i++): ?>
-                                            <th><?= $i ?></th>
+                                            <th></th>
                                         <?php endfor; ?>
                                         <th rowspan="2">Rekap</th>
                                     </tr>
                                     <tr>
                                         <?php for ($i = 1; $i <= $endOfMonth; $i++): ?>
-                                            <th><?= date('D', strtotime("$selectedYear-$selectedMonth-$i")) ?></th>
+                                            <?php
+                                            $date = date('Y-m-d', strtotime("$selectedYear-$selectedMonth-$i"));
+                                            $day = date('D', strtotime($date));
+                                            $formattedDate = date('j', strtotime($date)) . " ($day)";
+                                            ?>
+                                            <th><?= $formattedDate ?></th>
                                         <?php endfor; ?>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <?php foreach ($absensiData as $userId => $data): ?>
                                         <tr>
@@ -379,8 +384,6 @@
                                                     <?php if ($isHoliday): ?>
                                                         Libur
                                                     <?php elseif (isset($data['dates'][$i])): ?>
-                                                        <?= $data['dates'][$i]['masuk'] ?><br>
-                                                        <?= $data['dates'][$i]['pulang'] ?><br>
                                                         <?= $data['dates'][$i]['status'] ?>
                                                     <?php else: ?>
                                                         <?php if ($emptyClass): ?>
@@ -438,6 +441,7 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -535,10 +539,13 @@
             });
         });
     </script>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
     <style>
         .holiday {
@@ -565,6 +572,7 @@
                 info: false,
                 buttons: ['copy', 'csv', 'excel']
             });
+
         });
     </script>
 </body>
