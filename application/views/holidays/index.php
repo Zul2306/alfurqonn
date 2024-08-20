@@ -7,11 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Daftar Hari Libur</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="icon" href="http://localhost/alfurqon/images/logo.png" type="image/png">
 	<style>
 		body {
 			font-family: 'Source Sans Pro', sans-serif;
 			background-color: #ffffff;
 			background-size: cover;
+			background-image: url('http://localhost/alfurqon/images/background.jpg');
+			background-size: cover;
+			background-position: center;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-position: center;
@@ -21,6 +25,7 @@
 		.container {
 			max-width: 1200px;
 			margin: auto;
+			opacity: 0.97;
 		}
 
 		.card {
