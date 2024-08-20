@@ -17,7 +17,11 @@
     <style>
         body {
             font-family: 'Source Sans Pro', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
             padding: 20px;
         }
 
@@ -35,7 +39,7 @@
         }
 
         .card-header {
-            background-color: #007bff;
+            background-color: #00a945;
             color: #ffffff;
             padding: 10px 15px;
             font-size: 1.25rem;
@@ -110,7 +114,7 @@
         }
 
         table.dataTable thead th {
-            background-color: #007bff;
+            background-color: #00a945;
             color: white;
             text-align: center;
         }
@@ -250,7 +254,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -304,7 +308,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Filter</button>
+                        <button type="submit" class="btn btn-success text-white" style="background-color: #28a745 !important; border-color: #28a745 !important;">Filter</button>
                     </form>
 
                     <div class="table-container">

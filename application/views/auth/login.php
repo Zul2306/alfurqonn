@@ -7,7 +7,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('http://localhost/alfurqon13/alfurqonn/images/alfur.jpg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,7 +17,7 @@
             margin: 0;
         }
         .login-container {
-            background-color: #ffffff;
+            background-color: rgba(225, 225, 255, 0.9);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

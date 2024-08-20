@@ -2,11 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar User</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #ffffff;
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+    </style>
+    <style>
         .navbar {
             z-index: 1;
             position: fixed;
@@ -84,7 +109,8 @@
     </style>
 </head>
 
-<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,53 +138,57 @@
     </nav>
 
 
-  <div class="container content">
-    <h1 class="mb-4">Daftar User</h1>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($users as $user): ?>
-          <tr>
-            <td><?php echo $user->id; ?></td>
-            <td><?php echo $user->name; ?></td>
-            <td><?php echo $user->email; ?></td>
-            <td>
+    <div class="container content">
+    <div class="card">
+    <h1 class="mb-4 text-center">Daftar User</h1>
 
-              <!-- Tambahkan tombol tanpa link untuk pengujian -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($users as $user): ?>
+                        <tr>
+                            <td><?php echo $user->id; ?></td>
+                            <td><?php echo $user->name; ?></td>
+                            <td><?php echo $user->email; ?></td>
+                            <td>
 
-              <button class="btn btn-primary btn-sm" onclick="redirectToEditPage(<?= $user->id; ?>)">Edit</button>
-              <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $user->id; ?>)">Delete</button>
-            </td>
+                                <!-- Tambahkan tombol tanpa link untuk pengujian -->
 
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
+                                <button class="btn btn-primary btn-sm" onclick="redirectToEditPage(<?= $user->id; ?>)">Edit</button>
+                                <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $user->id; ?>)">Delete</button>
+                            </td>
 
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 <script>
-  function redirectToEditPage(userId) {
-    window.location.href = '<?= base_url('user/edit/'); ?>' + userId;
-  }
+    function redirectToEditPage(userId) {
+        window.location.href = '<?= base_url('user/edit/'); ?>' + userId;
+    }
 </script>
 
 <script>
-function confirmDelete(userId) {  
-            if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-                // Redirect ke URL penghapusan jika user menekan "OK"
-                window.location.href = '<?= base_url('user/delete/'); ?>' + userId;
-            }}
+    function confirmDelete(userId) {
+        if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
+            // Redirect ke URL penghapusan jika user menekan "OK"
+            window.location.href = '<?= base_url('user/delete/'); ?>' + userId;
+        }
+    }
 </script>
+
 </html>
