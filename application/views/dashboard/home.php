@@ -290,7 +290,7 @@
                     <form method="GET" action="<?= site_url('home') ?>" class="mb-3">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="month">Bulan:</label>
+                                <label for="month" style="padding-left: 15px;">Bulan:</label>
                                 <select name="month" id="month" class="form-control">
                                     <?php for ($i = 1; $i <= 12; $i++): ?>
                                         <option value="<?= $i ?>" <?= $i == $selectedMonth ? 'selected' : '' ?>>
@@ -300,7 +300,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="year">Tahun:</label>
+                                <label for="year" style="padding-left: 13px;">Tahun:</label>
                                 <select name="year" id="year" class="form-control">
                                     <?php for ($i = 2020; $i <= date('Y'); $i++): ?>
                                         <option value="<?= $i ?>" <?= $i == $selectedYear ? 'selected' : '' ?>><?= $i ?></option>
