@@ -160,7 +160,7 @@
 
 			<!-- Button trigger modal -->
 			<div class="d-flex justify-content-end mb-3">
-				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" style="margin-right: 20px;">
 					Tambah Hari Libur
 				</button>
 			</div>
